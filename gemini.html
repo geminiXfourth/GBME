@@ -31,6 +31,10 @@
         .wrap {
             width: 100%;
         }
+        .wrap.active {
+            height: 100vh;
+            overflow: hidden;
+        }
 
         /*アクティブになったエリア*/
         #g-nav.panelactive {
@@ -63,13 +67,11 @@
 
         .circle-bg.circleactive {
             transform: scale(24);
-            overflow: hidden;
-            /*クラスが付与されたらscaleを拡大*/
         }
 
         /*ナビゲーション*/
         #g-nav ul {
-            opacity: 0;
+            display: none;
             /*はじめは透過0*/
             /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
             padding: 0;
@@ -78,11 +80,15 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
         }
 
-        /*背景が出現後にナビゲーションを表示*/
+        #g-nav {
+            overflow: hidden;
+        }
+
         #g-nav.panelactive ul {
-            opacity: 1;
+            display: block;
         }
 
         /* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
@@ -224,7 +230,7 @@
         }
 
         #acti>p {
-            padding-left: 3.2rem;
+            padding-left: 3rem;
             font-weight: 400;
             font-size: 16px;
             line-height: 36px;
@@ -233,9 +239,13 @@
 
         #particles-js {
             position: fixed;
+            opacity: 0.6;
+            z-index: 99;
             width: 100%;
             height: 100%;
+            pointer-events: none;
         }
+
 
         @media (min-width:576px) {
             .wrap {
@@ -262,7 +272,6 @@
         <div id="particles-js"></div>
         <div class="openbtn1"><span></span><span></span><span></span></div>
         <nav id="g-nav">
-            <!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
             <ul>
                 <li><a href="#acti">活動資訊</a></li>
                 <li><a href="#donate">募資計畫</a></li>
@@ -271,7 +280,8 @@
             </ul>
 
         </nav>
-        <div class="circle-bg"></div>
+        <div class="circle-sc"><div class="circle-bg"></div></div>
+        
 
         <section id="index">
             <img src="./gemini_img/GBME_logo.png">
@@ -287,7 +297,7 @@
 
                 展覽地點：星星路99號<br>
                 地址：<br>
-                台北市大安區忠孝東路四段97號3樓28室<br>
+                <a href="https://goo.gl/maps/uff6P1iLPFQfFwhv6" class="highindex">台北市大安區忠孝東路四段97號3樓28室</a><br>
                 前往方式：<br>
                 捷運忠孝復興/忠孝敦化站 步行約6分鐘<br><br>
 
@@ -321,19 +331,22 @@
             $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
             $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
             $(".circle-bg").toggleClass('circleactive');//丸背景にcircleactiveクラスを付与
+            $(".wrap").toggleClass('active');
+            
         });
 
         $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
             $(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
             $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスを除去
             $(".circle-bg").removeClass('circleactive');//丸背景のcircleactiveクラスを除去
+            $(".wrap").removeClass('active');
         });
 
         //彩帶
         particlesJS("particles-js", {
             "particles": {
                 "number": {
-                    "value": 80,//この数値を変更すると紙吹雪の数が増減できる
+                    "value": 64,//この数値を変更すると紙吹雪の数が増減できる
                     "density": {
                         "enable": false,
                         "value_area": 400
@@ -403,6 +416,7 @@
             },
             "retina_detect": true
         });
+
 
     </script>
 
