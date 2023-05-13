@@ -31,9 +31,20 @@
         .wrap {
             width: 100%;
         }
+
         .wrap.active {
             height: 100vh;
             overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: #FFB9B3;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: #B1E1FF;
         }
 
         /*アクティブになったエリア*/
@@ -45,19 +56,14 @@
             display: block;
         }
 
-        /*丸の拡大*/
         .circle-bg {
             position: fixed;
             z-index: 3;
-            /*丸の形*/
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
+            width: 88px;
+            height: 88px;
             background: linear-gradient(180deg, #B1E1FF 0%, #F6B1FF 52.6%, #FFFEB1 100%);
-            /*丸のスタート位置と形状*/
 
-            /*scaleをはじめは0に*/
-            top: -20px;
+            top: -28px;
             left: 50%;
             transform: translateX(-50%);
             /*50%から円の半径を引いた値*/
@@ -150,41 +156,34 @@
             display: inline-block;
             transition: all .4s;
             position: absolute;
-            left: 14px;
-            height: 3px;
+            left: 5px;
+            height: 8px;
             border-radius: 2px;
             background-color: #FFF;
-            width: 45%;
+            width: 80%;
         }
 
         .openbtn1 span:nth-of-type(1) {
-            top: 15px;
+            top: 12px;
         }
 
         .openbtn1 span:nth-of-type(2) {
-            top: 23px;
+            top: 28px;
         }
 
-        .openbtn1 span:nth-of-type(3) {
-            top: 31px;
-        }
 
         .openbtn1.active span:nth-of-type(1) {
             top: 18px;
-            left: 18px;
+            left: 0;
             transform: translateY(6px) rotate(-45deg);
-            width: 30%;
+            width: 80%;
         }
 
         .openbtn1.active span:nth-of-type(2) {
-            opacity: 0;
-        }
-
-        .openbtn1.active span:nth-of-type(3) {
             top: 30px;
-            left: 18px;
+            left: 0;
             transform: translateY(-6px) rotate(45deg);
-            width: 30%;
+            width: 80%;
         }
 
         #index {
@@ -213,24 +212,16 @@
             bottom: 0;
         }
 
-        #acti {
+        .sections {
             width: 100%;
+            padding:0 1.5rem;
         }
 
-        #acti>div {
-            width: 100%;
-            height: 100px;
-            color: #FFF;
-            font-weight: 600;
-            background-color: #FFB8B3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 40px;
+        h1 {
+            margin-bottom: 36px;
         }
 
         #acti>p {
-            padding-left: 3rem;
             font-weight: 400;
             font-size: 16px;
             line-height: 36px;
@@ -244,6 +235,33 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+        }
+
+        .banner {
+            background-image: url("gemini_img/gem_birthday.png");
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100px;
+            background-color: #FFB8B3;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFB1D2;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 0 1.5rem;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .button p {
+            color: #FFF;
+            font-size: 24px;
+            margin: 0;
+            font-weight: 600;
         }
 
 
@@ -270,34 +288,36 @@
 <body>
     <div class="wrap">
         <div id="particles-js"></div>
-        <div class="openbtn1"><span></span><span></span><span></span></div>
+        <div class="openbtn1"><span></span><span></span></div>
         <nav id="g-nav">
             <ul>
                 <li><a href="#acti">活動資訊</a></li>
-                <li><a href="#donate">募資計畫</a></li>
+                <li><a href="#donate">應援計畫</a></li>
                 <li><a href="#">應援禮介紹</a></li>
                 <li><a href="#contact">聯絡我們</a></li>
             </ul>
 
         </nav>
-        <div class="circle-sc"><div class="circle-bg"></div></div>
-        
+        <div class="circle-sc">
+            <div class="circle-bg"></div>
+        </div>
+
 
         <section id="index">
             <img src="./gemini_img/GBME_logo.png">
             <img src="./gemini_img/two_people.png">
             <img src="./gemini_img/frame.png">
         </section>
-        <section id="acti">
-            <div>
-                <h1>活動資訊</h1>
-            </div>
+        <div class="banner"></div>
+        <section id="acti" class="sections">
+
+            <h1>活動資訊</h1>
             <p>
                 展覽日期：6/10（六）- 6/13（二）<br><br>
 
                 展覽地點：星星路99號<br>
                 地址：<br>
-                <a href="https://goo.gl/maps/uff6P1iLPFQfFwhv6" class="highindex">台北市大安區忠孝東路四段97號3樓28室</a><br>
+                <a href="https://goo.gl/maps/uff6P1iLPFQfFwhv6" target="_blank">台北市大安區忠孝東路四段97號3樓28室</a><br>
                 前往方式：<br>
                 捷運忠孝復興/忠孝敦化站 步行約6分鐘<br><br>
 
@@ -306,8 +326,8 @@
 
                 展覽時間：<br>
                 6/10-11採線上表單預約制！<br>
-                ※以1小時為區間，每日共六個時段<br>
-                ※每一時段可容納20人<br>
+                #以1小時為區間，每日共六個時段<br>
+                #每一時段可容納20人<br>
                 ❶ 13:30-14:30<br>
                 ❷ 14:30-15:30<br>
                 ❸ 15:30-16:30<br>
@@ -315,14 +335,38 @@
                 ❺ 17:30-18:30<br>
                 ❻ 18:30-19:30<br>
             </p>
-        </section>
-        <section id="donate">
 
         </section>
-        <section id="gift">
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnveZyvOVMecGulChgWg-Jrsx_0MscDzRCC18i71CeDlBNUQ/viewform" target="_blank" class="button">
+            <p>預約表單連結</p><img src="./gemini_img/iPhone 13/material-symbols_arrow-forward-ios-rounded.svg">
+        </a><br><br>
+        <div class="banner"></div>
+
+        <section id="donate" class="sections">
+            <h1>＃應援計劃<br>Birthday Supporting Project</h1>
+            <p>泰國應援部分 ，<br>
+                將於 Gemimi 生日時經由 Gem 泰站（IG&nbsp;@Geminintfamily）協助，<br>
+                致送 零食蛋糕 到 Gemini 生日慶生指定會場。<br>
+                <br>
+                也歡迎 Khunnoo 提供手寫卡片，台站將於6月底統一帶至泰國，<br>
+                交由 Gem 泰站轉交給 Gemini。<br><br><br>
+                #手寫卡片請於生日展6/10-6/11交給台站人員（只有收這兩天唷！）<br><br><br>
+                台灣集資部分，<br>
+                因此次慶生活動有台灣的生日特展與泰國應援，<br>
+                金額支出較高，希望Khunnoo能一起集資，<br>
+                展場將設置募款箱，<br>
+                並有小小的募資禮作為答謝，<br>
+                歡迎大家踴躍支持，讓應援能夠持續下去！<br>
+            </p>
+        </section>
+
+        <div class="banner"></div>
+
+        <section id="gift" class="sections">
 
         </section>
-        <section id="contact">
+        <section id="contact" class="sections">
 
         </section>
     </div>
@@ -332,7 +376,7 @@
             $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
             $(".circle-bg").toggleClass('circleactive');//丸背景にcircleactiveクラスを付与
             $(".wrap").toggleClass('active');
-            
+
         });
 
         $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
