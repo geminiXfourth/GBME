@@ -11,20 +11,33 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
     <style>
+        * {
+            /*border: 1px solid #333;*/
+            box-sizing: border-box;
+        }
+
         html,
         body {
             width: 100%;
             height: 100%;
             margin: 0;
+            background-image: url(./gemini_img/backdraw.jpg);
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrap {
+            width: 576px;
+            position: relative;
         }
 
         /*アクティブになったエリア*/
         #g-nav.panelactive {
             /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
             position: fixed;
-            z-index: 999;
+            z-index: 99;
             top: 0;
-            width: 100%;
+            width: 576px;
             height: 100vh;
         }
 
@@ -36,36 +49,25 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background: #999;
+            background: linear-gradient(180deg, #B1E1FF 0%, #F6B1FF 52.6%, #FFFEB1 100%);
             /*丸のスタート位置と形状*/
-            transform: scale(0);
+
             /*scaleをはじめは0に*/
-            top: -50px;
-            left: calc(50% - 50px);
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
             /*50%から円の半径を引いた値*/
             transition: all .6s;
             /*0.6秒かけてアニメーション*/
         }
 
         .circle-bg.circleactive {
-            transform: scale(100);
+            transform: scale(50);
             /*クラスが付与されたらscaleを拡大*/
         }
 
-        /*ナビゲーションの縦スクロール*/
-        #g-nav-list {
-            display: none;
-            /*はじめは表示なし*/
-            /*ナビの数が増えた場合縦スクロール*/
-            position: fixed;
-            z-index: 999;
-            width: 100%;
-            height: 100vh;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
-        }
 
-        #g-nav.panelactive #g-nav-list {
+        #g-nav.panelactive {
             display: block;
             /*クラスが付与されたら出現*/
         }
@@ -76,6 +78,7 @@
             /*はじめは透過0*/
             /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
             position: absolute;
+            padding: 0;
             z-index: 999;
             top: 50%;
             left: 50%;
@@ -92,7 +95,6 @@
             animation-name: gnaviAnime;
             animation-duration: 1s;
             animation-delay: .2s;
-            /*0.2 秒遅らせて出現*/
             animation-fill-mode: forwards;
             opacity: 0;
         }
@@ -117,13 +119,17 @@
         #g-nav li a {
             color: #333;
             text-decoration: none;
-            padding: 10px;
+            padding: 20px 0;
             display: block;
-            text-transform: uppercase;
             letter-spacing: 0.1em;
+            font-size: 24px;
             font-weight: bold;
         }
 
+        #g-nav a:hover {
+            color: #FFF;
+            font-size: 28px;
+        }
 
         /*========= ボタンのためのCSS ===============*/
         .openbtn1 {
@@ -131,7 +137,8 @@
             z-index: 9999;
             /*ボタンを最前面に*/
             top: 10px;
-            right: 10px;
+            right: 50%;
+            transform: translateX(50%);
             cursor: pointer;
             width: 50px;
             height: 50px;
@@ -145,7 +152,7 @@
             left: 14px;
             height: 3px;
             border-radius: 2px;
-            background-color: #666;
+            background-color: #FFF;
             width: 45%;
         }
 
@@ -178,6 +185,61 @@
             transform: translateY(-6px) rotate(45deg);
             width: 30%;
         }
+
+        #index {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        #index img:nth-child(1) {
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        #index img:nth-child(2) {
+            width: 360px;
+            position: absolute;
+            top: 100px;
+        }
+
+        #index img:nth-child(3) {
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        #acti>div {
+            width: 100%;
+            height: 100px;
+            color: #FFF;
+            font-weight: 600;
+            background-color: #FFB8B3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        #acti>p {
+            padding-left: 4rem;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 36px;
+            letter-spacing: 0.04em;
+        }
+
+        @media (max-width:576px) {
+            .wrap {
+                width: 100%;
+            }
+
+            #g-nav.panelactive {
+                width: 100%;
+            }
+        }
     </style>
 
 </head>
@@ -185,36 +247,63 @@
 
 
 <body>
-
-    <div class="openbtn1"><span></span><span></span><span></span></div>
-    <nav id="g-nav">
-        <div id="g-nav-list">
+    <div class="wrap">
+        <div class="openbtn1"><span></span><span></span><span></span></div>
+        <nav id="g-nav">
             <!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
             <ul>
-                <li><a href="#">Top</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#acti">活動資訊</a></li>
+                <li><a href="#donate">募資計畫</a></li>
+                <li><a href="#">應援禮介紹</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
             </ul>
-        </div>
-    </nav>
-    <div class="circle-bg"></div>
 
+        </nav>
+        <div class="circle-bg"></div>
 
+        <section id="index">
+            <img src="./gemini_img/frame.png">
+            <img src="./gemini_img/GBME_logo.png">
+            <img src="./gemini_img/two_people.png">
+        </section>
+        <section id="acti">
+            <div>
+                <h1>活動資訊</h1>
+            </div>
+            <p>
+                展覽日期：6/10（六）- 6/13（二）<br><br>
 
-    <section id="index">
+                展覽地點：星星路99號<br>
+                地址：<br>
+                台北市大安區忠孝東路四段97號3樓28室<br>
+                前往方式：<br>
+                捷運忠孝復興/忠孝敦化站 步行約6分鐘<br><br>
 
-    </section>
-    <section id="acti">
+                展覽費用：<br>
+                每人酌收 50元入場費<br><br>
 
-    </section>
-    <section id="donate">
+                展覽時間：<br>
+                6/10-11採線上表單預約制！<br>
+                ※以1小時為區間，每日共六個時段<br>
+                ※每一時段可容納20人<br>
+                ❶ 13:30-14:30<br>
+                ❷ 14:30-15:30<br>
+                ❸ 15:30-16:30<br>
+                ❹ 16:30-17:30<br>
+                ❺ 17:30-18:30<br>
+                ❻ 18:30-19:30<br>
+            </p>
+        </section>
+        <section id="donate">
 
-    </section>
-    <section id="gift">
+        </section>
+        <section id="gift">
 
-    </section>
+        </section>
+        <section id="contact">
 
+        </section>
+    </div>
     <script>
         $(".openbtn1").click(function () {
             $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
@@ -227,6 +316,7 @@
             $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスを除去
             $(".circle-bg").removeClass('circleactive');//丸背景のcircleactiveクラスを除去
         });
+
     </script>
 
 </body>
