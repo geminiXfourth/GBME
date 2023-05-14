@@ -9,6 +9,12 @@
     <meta property="og:image"
         content="https://github.com/geminiXfourth/GBME/blob/main/gemini_img/og_pic.jpg?raw=true" />
     <meta property="og:description" content="Gemini Birthday Mini Exhibition生日特展即將在0610-0613開展..." />
+
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="770" />
+
+
     <title>Gemini生日特展</title>
     <link href="gemini_img/gemtwfclogo.ico" rel="shortcut icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,6 +41,7 @@
 
         .wrap {
             width: 100%;
+            position: relative;
         }
 
         .wrap.active {
@@ -67,7 +74,7 @@
             width: 88px;
             height: 88px;
             background: linear-gradient(180deg, #B1E1FF 0%, #F6B1FF 52.6%, #FFFEB1 100%);
-
+            box-shadow: inset -4px -4px 4px rgba(168, 167, 119, 0.3), inset 4px 4px 4px rgba(255, 255, 255, 0.6);
             top: -28px;
             left: 50%;
             transform: translateX(-50%);
@@ -143,6 +150,19 @@
             font-size: 28px;
         }
 
+        #g-nav ul li:nth-child(5) {
+            margin-top: 48px;
+            color: #FFF;
+        }
+
+        #g-nav ul li:nth-child(5) span {
+            margin-top: 16px;
+            color: #FFF;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+
         /*========= ボタンのためのCSS ===============*/
         .openbtn1 {
             position: fixed;
@@ -169,23 +189,23 @@
         }
 
         .openbtn1 span:nth-of-type(1) {
-            top: 12px;
+            top: 10px;
         }
 
         .openbtn1 span:nth-of-type(2) {
-            top: 28px;
+            top: 26px;
         }
 
 
         .openbtn1.active span:nth-of-type(1) {
-            top: 18px;
+            top: 16px;
             left: 0;
             transform: translateY(6px) rotate(-45deg);
             width: 80%;
         }
 
         .openbtn1.active span:nth-of-type(2) {
-            top: 30px;
+            top: 28px;
             left: 0;
             transform: translateY(-6px) rotate(45deg);
             width: 80%;
@@ -197,6 +217,7 @@
             position: relative;
             display: flex;
             justify-content: center;
+            overflow: hidden;
         }
 
         #index img:nth-child(3) {
@@ -226,13 +247,30 @@
             margin-bottom: 36px;
         }
 
+        #acti {
+            position: relative;
+        }
+
         #acti>p {
             font-weight: 400;
             font-size: 16px;
             line-height: 36px;
             letter-spacing: 0.04em;
         }
+        .union1 {
+            position: absolute;
+            left: -72px;
+        }
+        .union2 {
+            position: absolute;
+            right:-20px;
+            top: 600px;
+        }
 
+        .union3 {
+            position: absolute;
+            left: -160px;
+        }
         #particles-js {
             position: fixed;
             opacity: 0.6;
@@ -247,7 +285,7 @@
             background-size: auto 100%;
             background-repeat: no-repeat;
             width: 100%;
-            height: 100px;
+            height: 160px;
             background-color: #FFB8B3;
             margin-bottom: 40px;
         }
@@ -274,6 +312,34 @@
             font-weight: 600;
         }
 
+        .weight {
+            font-weight: 600;
+            box-shadow: 0 1px;
+            padding-bottom: 2px;
+        }
+
+        #donate {
+            position: relative;
+        }
+
+        #donate >h1 >span {
+            font-size: 1.2vw;
+        }
+
+        #footer {
+            width: 100%;
+            height: 175px;
+            background-image: url("./gemini_img/footer_back.svg");
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            margin-top: 240px;
+            padding: 0 1.5rem;
+            
+        }
+
+        #footer img:nth-child(1) {
+            width: 180px;
+        }
 
         @media (min-width:576px) {
             .wrap {
@@ -331,6 +397,12 @@
                 <li><a href="#donate">應援計畫</a></li>
                 <li><a href="#">應援禮介紹</a></li>
                 <li><a href="#contact">聯絡我們</a></li>
+                <li>
+                    Support By<br><span>Gemini 台灣粉絲站</span>
+                    <a href="https://www.instagram.com/gemini_twfc/?next=https%3A%2F%2Fwww.instagram.com%2Fp%2F5kuFSjvpCk%2Fc%2F17852237263022004%2F%3F__coig_login%3D1" target="_blank">
+                        <img src="./gemini_img/iPhone 13/ig_white.svg">
+                    </a>
+                </li>
             </ul>
 
         </nav>
@@ -348,6 +420,7 @@
         <section id="acti" class="sections">
 
             <h1 class="fadeInTrigger">活動資訊</h1>
+            <img src="./gemini_img/Union_blue.svg" class="union1">
             <p class="fadeInTrigger">
                 展覽日期：6/10（六）- 6/13（二）<br><br>
 
@@ -361,7 +434,7 @@
                 每人酌收 50元入場費<br><br>
 
                 展覽時間：<br>
-                6/10-11採線上表單預約制！<br>
+                <span class="weight">6/10-11採線上表單預約制！</span><br>
                 #以1小時為區間，每日共六個時段<br>
                 #每一時段可容納20人<br>
                 ❶ 13:30-14:30<br>
@@ -371,6 +444,7 @@
                 ❺ 17:30-18:30<br>
                 ❻ 18:30-19:30<br>
             </p>
+            <img src="./gemini_img/Union_red.svg" class="union2">
 
         </section>
 
@@ -381,7 +455,8 @@
         <div class="banner"></div>
 
         <section id="donate" class="sections">
-            <h1 class="fadeInTrigger">＃應援計劃<br>Birthday Supporting Project</h1>
+            <img src="./gemini_img/Union_purple.svg" class="union3">
+            <h1 class="fadeInTrigger">＃應援計劃&nbsp;<span>Birthday Supporting Project</span></h1>
             <p class="fadeInTrigger">泰國應援部分 ，<br>
                 將於Gemimi生日時經由Gem泰站（IG&nbsp;@Geminintfamily）協助，<br>
                 致送零食蛋糕到Gemini生日慶生指定會場。<br>
@@ -389,7 +464,7 @@
                 也歡迎Khunnoo提供手寫卡片，<br>
                 台站將於6月底統一帶至泰國，<br>
                 交由Gem泰站轉交給Gemini。<br><br><br>
-                #手寫卡片請於生日展6/10-6/11交給台站人員<br>（只有收這兩天唷！）<br><br><br>
+                <span class="weight"> #手寫卡片請於生日展6/10-6/11交給台站人員<br>（只有收這兩天唷！）</span><br><br><br>
                 台灣集資部分，<br>
                 因此次慶生活動有台灣的生日特展與泰國應援，<br>
                 金額支出較高、希望Khunnoo能一起集資，<br>
@@ -402,10 +477,17 @@
         <div class="banner"></div>
 
         <section id="gift" class="sections">
-
+            <h1 class="fadeInTrigger">應援禮介紹</h1>
+            <p class="fadeInTrigger">敬請期待</p>
         </section>
         <section id="contact" class="sections">
 
+        </section>
+        <section id="footer">
+            <img src="./gemini_img/GBME_white.svg">
+            <p>＃Gemini Birthday Mini Exhibition 生日特展</p>
+            <img src="./gemini_img/iPhone 13/ig_white.svg">
+            <img src="./gemini_img/bi_twitter.svg">
         </section>
     </div>
     <script>
