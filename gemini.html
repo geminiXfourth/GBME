@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Gemini生日特展" />
-    <meta property="og:image" content="https://github.com/geminiXfourth/GBME/blob/main/gemini_img/og_pic.jpg?raw=true" />
+    <meta property="og:image"
+        content="https://github.com/geminiXfourth/GBME/blob/main/gemini_img/og_pic.jpg?raw=true" />
     <meta property="og:description" content="Gemini Birthday Mini Exhibition生日特展即將在0610-0613開展..." />
     <title>Gemini生日特展</title>
-    <link href="gemini_img/gemtwfclogo.ico" rel="shortcut icon"/>
+    <link href="gemini_img/gemtwfclogo.ico" rel="shortcut icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
@@ -288,6 +289,32 @@
                 left: 50px;
             }
         }
+
+        /* fadeIn */
+        .fadeIn {
+            animation-name: fadeInAnime;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInAnime {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(15px);
+            }
+        }
+
+        /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+        .fadeInTrigger {
+            opacity: 0;
+            transform: translateY(-15px);
+        }
     </style>
 
 </head>
@@ -313,15 +340,15 @@
 
 
         <section id="index">
-            <img src="./gemini_img/GBME_logo.png">
-            <img src="./gemini_img/two_people.png">
+            <img src="./gemini_img/GBME_logo.png" class="fadeInTrigger">
+            <img src="./gemini_img/two_people.png" class="fadeInTrigger">
             <img src="./gemini_img/frame.png">
         </section>
         <div class="banner"></div>
         <section id="acti" class="sections">
 
-            <h1>活動資訊</h1>
-            <p>
+            <h1 class="fadeInTrigger">活動資訊</h1>
+            <p class="fadeInTrigger">
                 展覽日期：6/10（六）- 6/13（二）<br><br>
 
                 展覽地點：星星路99號<br>
@@ -348,14 +375,14 @@
         </section>
 
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnveZyvOVMecGulChgWg-Jrsx_0MscDzRCC18i71CeDlBNUQ/viewform"
-            target="_blank" class="button">
+            target="_blank" class="button fadeInTrigger">
             <p>預約表單連結</p><img src="./gemini_img/iPhone 13/material-symbols_arrow-forward-ios-rounded.svg">
         </a><br><br>
         <div class="banner"></div>
 
         <section id="donate" class="sections">
-            <h1>＃應援計劃<br>Birthday Supporting Project</h1>
-            <p>泰國應援部分 ，<br>
+            <h1 class="fadeInTrigger">＃應援計劃<br>Birthday Supporting Project</h1>
+            <p class="fadeInTrigger">泰國應援部分 ，<br>
                 將於Gemimi生日時經由Gem泰站（IG&nbsp;@Geminintfamily）協助，<br>
                 致送零食蛋糕到Gemini生日慶生指定會場。<br>
                 <br>
@@ -368,7 +395,7 @@
                 金額支出較高、希望Khunnoo能一起集資，<br>
                 展場將設置募款箱，<br>
                 並有小小的募資禮作為答謝，<br>
-                歡迎大家踴躍支持，讓應援能夠持續下去！<br>
+                歡迎大家踴躍支持，讓應援能夠持續下去！<br><br><br>
             </p>
         </section>
 
@@ -472,6 +499,31 @@
             "retina_detect": true
         });
 
+        //fade動畫
+        // 1. 動くきっかけを独自の名前（関数：fadeAnime）で定義
+        function fadeAnime() {
+            //動きの指定
+            $('.fadeInTrigger').each(function () { //fadeInTriggerというクラス名が
+                var elemPos = $(this).offset().top + 50;//要素より、50px上の
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll >= elemPos - windowHeight) {
+                    $(this).addClass('fadeIn');// 画面内に入ったらfadeInというクラス名を追記
+                } else {
+                    $(this).removeClass('fadeIn');// 画面外に出たらfadeInというクラス名を外す
+                }
+            });
+        }
+        // 2. 定義した名前をページが読み込まれた後・スクロールした後それぞれのきっかけに指定
+        // 画面をスクロールをしたら動く場合の記述
+        $(window).scroll(function () {
+            fadeAnime();/* アニメーション用の関数を呼ぶ*/
+        });// ここまで画面をスクロールをしたら動く場合の記述
+
+        // 画面が読み込まれたらすぐに動く場合の記述
+        $(window).on('load', function () {
+            fadeAnime();/* アニメーション用の関数を呼ぶ*/
+        });// ここまで画面が読み込まれたらすぐに動く場合の記述
 
     </script>
 
