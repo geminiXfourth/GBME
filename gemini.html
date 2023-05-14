@@ -107,6 +107,7 @@
 
         #g-nav.panelactive ul {
             display: block;
+            padding-top: 88px;
         }
 
         /* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
@@ -229,7 +230,7 @@
         #index img:nth-child(1) {
             width: 360px;
             position: absolute;
-            top: 92px;
+            top: 13.5vh;
         }
 
         #index img:nth-child(2) {
@@ -245,6 +246,7 @@
 
         h1 {
             margin-bottom: 36px;
+            font-weight: 600;
         }
 
         #acti {
@@ -253,7 +255,7 @@
 
         #acti>p {
             font-weight: 400;
-            font-size: 16px;
+            font-size: 4vw;
             line-height: 36px;
             letter-spacing: 0.04em;
         }
@@ -272,6 +274,18 @@
         .union3 {
             position: absolute;
             left: -160px;
+        }
+
+        .starroad {
+            position: absolute;
+            right: 0;
+            top: 240px;
+        }
+
+        .envecake {
+            position: absolute;
+            right: 0;
+            top: 200px;
         }
 
         #particles-js {
@@ -324,7 +338,11 @@
         }
 
         #donate>h1>span {
-            font-size: 1.2vw;
+            font-size: 1.6vw;
+        }
+
+        #donate>p {
+            font-size: 4vw;
         }
 
         #footer {
@@ -369,6 +387,20 @@
 
             #particles-js {
                 left: 50px;
+            }
+
+            #donate>p {
+                font-size: 16px;
+            }
+            #acti>p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width:576px) {
+            #index img:nth-child(1) {
+                width: 280px;
+                top: 12vh;
             }
         }
 
@@ -438,6 +470,7 @@
 
             <h1 class="fadeInTrigger">活動資訊</h1>
             <img src="./gemini_img/Union_blue.svg" class="union1">
+            <img src="./gemini_img/starroad.png" class="starroad">
             <p class="fadeInTrigger">
                 <span class="icon"><img src="./gemini_img/icon_date.svg"></span> 展覽日期：6/10（六）- 6/13（二）<br><br>
 
@@ -475,6 +508,7 @@
         <section id="donate" class="sections">
             <img src="./gemini_img/Union_purple.svg" class="union3">
             <h1 class="fadeInTrigger">＃應援計劃&nbsp;<span>Birthday Supporting Project</span></h1>
+            <img src="./gemini_img/envelop_cake.svg" class="envecake">
             <p class="fadeInTrigger">泰國應援部分 ，<br>
                 將於Gemimi生日時經由Gem泰站（IG&nbsp;@Geminintfamily）協助，<br>
                 致送零食蛋糕到Gemini生日慶生指定會場。<br>
