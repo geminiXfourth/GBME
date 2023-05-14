@@ -240,7 +240,7 @@
 
         .sections {
             width: 100%;
-            padding: 0 1.5rem;
+            padding: 48px 1.5rem 0 1.5rem;
         }
 
         h1 {
@@ -257,13 +257,15 @@
             line-height: 36px;
             letter-spacing: 0.04em;
         }
+
         .union1 {
             position: absolute;
             left: -72px;
         }
+
         .union2 {
             position: absolute;
-            right:-20px;
+            right: -20px;
             top: 600px;
         }
 
@@ -271,6 +273,7 @@
             position: absolute;
             left: -160px;
         }
+
         #particles-js {
             position: fixed;
             opacity: 0.6;
@@ -287,7 +290,6 @@
             width: 100%;
             height: 160px;
             background-color: #FFB8B3;
-            margin-bottom: 40px;
         }
 
         .button {
@@ -301,7 +303,6 @@
             background-color: #FFB1D2;
             border-radius: 12px;
             padding: 16px;
-            margin: 0 1.5rem;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
 
@@ -322,23 +323,38 @@
             position: relative;
         }
 
-        #donate >h1 >span {
+        #donate>h1>span {
             font-size: 1.2vw;
         }
 
         #footer {
             width: 100%;
-            height: 175px;
-            background-image: url("./gemini_img/footer_back.svg");
-            background-size: 100% auto;
-            background-repeat: no-repeat;
-            margin-top: 240px;
-            padding: 0 1.5rem;
-            
+            background-color: #B1E1FF;
+            padding: 1.6rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        #footer img:nth-child(1) {
-            width: 180px;
+        #footer>div {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        #footer p {
+            margin: 0 12px;
+            color: #FFF;
+        }
+
+        #footer>p {
+            margin-top: 16px;
+        }
+
+        #cooper>p {
+            font-size: 14px;
+            text-align: center;
+            line-height: 36px;
         }
 
         @media (min-width:576px) {
@@ -395,11 +411,12 @@
             <ul>
                 <li><a href="#acti">活動資訊</a></li>
                 <li><a href="#donate">應援計畫</a></li>
-                <li><a href="#">應援禮介紹</a></li>
-                <li><a href="#contact">聯絡我們</a></li>
+                <li><a href="#gift">應援禮介紹</a></li>
+                <li><a href="#cooper">合作邀約</a></li>
                 <li>
                     Support By<br><span>Gemini 台灣粉絲站</span>
-                    <a href="https://www.instagram.com/gemini_twfc/?next=https%3A%2F%2Fwww.instagram.com%2Fp%2F5kuFSjvpCk%2Fc%2F17852237263022004%2F%3F__coig_login%3D1" target="_blank">
+                    <a href="https://www.instagram.com/gemini_twfc/?next=https%3A%2F%2Fwww.instagram.com%2Fp%2F5kuFSjvpCk%2Fc%2F17852237263022004%2F%3F__coig_login%3D1"
+                        target="_blank">
                         <img src="./gemini_img/iPhone 13/ig_white.svg">
                     </a>
                 </li>
@@ -422,36 +439,37 @@
             <h1 class="fadeInTrigger">活動資訊</h1>
             <img src="./gemini_img/Union_blue.svg" class="union1">
             <p class="fadeInTrigger">
-                展覽日期：6/10（六）- 6/13（二）<br><br>
+                <span class="icon"><img src="./gemini_img/icon_date.svg"></span> 展覽日期：6/10（六）- 6/13（二）<br><br>
 
-                展覽地點：星星路99號<br>
-                地址：<br>
-                <a href="https://goo.gl/maps/uff6P1iLPFQfFwhv6" target="_blank">台北市大安區忠孝東路四段97號3樓28室</a><br>
-                前往方式：<br>
-                捷運忠孝復興/忠孝敦化站 步行約6分鐘<br><br>
+                <span class="icon"><img src="./gemini_img/icon_loca.svg"> 展覽地點：星星路99號<br>
+                    地址：<br>
+                    <a href="https://goo.gl/maps/uff6P1iLPFQfFwhv6" target="_blank">台北市大安區忠孝東路四段97號3樓28室</a><br>
+                    前往方式：<br>
+                    捷運忠孝復興/忠孝敦化站 步行約6分鐘<br><br>
 
-                展覽費用：<br>
-                每人酌收 50元入場費<br><br>
+                    <span class="icon"><img src="./gemini_img/icon_money.svg"> 展覽費用：<br>
+                        每人酌收 50元入場費<br><br>
 
-                展覽時間：<br>
-                <span class="weight">6/10-11採線上表單預約制！</span><br>
-                #以1小時為區間，每日共六個時段<br>
-                #每一時段可容納20人<br>
-                ❶ 13:30-14:30<br>
-                ❷ 14:30-15:30<br>
-                ❸ 15:30-16:30<br>
-                ❹ 16:30-17:30<br>
-                ❺ 17:30-18:30<br>
-                ❻ 18:30-19:30<br>
+                        <span class="icon"><img src="./gemini_img/icon_time.svg"> 展覽時間：<br>
+                            <span class="weight">6/10-11採線上表單預約制！</span><br>
+                            #以1小時為區間，每日共六個時段<br>
+                            #每一時段可容納20人<br>
+                            ❶ 13:30-14:30<br>
+                            ❷ 14:30-15:30<br>
+                            ❸ 15:30-16:30<br>
+                            ❹ 16:30-17:30<br>
+                            ❺ 17:30-18:30<br>
+                            ❻ 18:30-19:30<br>
             </p>
             <img src="./gemini_img/Union_red.svg" class="union2">
 
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnveZyvOVMecGulChgWg-Jrsx_0MscDzRCC18i71CeDlBNUQ/viewform"
+                target="_blank" class="button fadeInTrigger">
+                <p>預約表單連結</p><img src="./gemini_img/iPhone 13/material-symbols_arrow-forward-ios-rounded.svg">
+            </a><br><br>
         </section>
 
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnveZyvOVMecGulChgWg-Jrsx_0MscDzRCC18i71CeDlBNUQ/viewform"
-            target="_blank" class="button fadeInTrigger">
-            <p>預約表單連結</p><img src="./gemini_img/iPhone 13/material-symbols_arrow-forward-ios-rounded.svg">
-        </a><br><br>
+
         <div class="banner"></div>
 
         <section id="donate" class="sections">
@@ -466,7 +484,7 @@
                 交由Gem泰站轉交給Gemini。<br><br><br>
                 <span class="weight"> #手寫卡片請於生日展6/10-6/11交給台站人員<br>（只有收這兩天唷！）</span><br><br><br>
                 台灣集資部分，<br>
-                因此次慶生活動有台灣的生日特展與泰國應援，<br>
+                因此次有生日特展與泰國應援兩個活動，<br>
                 金額支出較高、希望Khunnoo能一起集資，<br>
                 展場將設置募款箱，<br>
                 並有小小的募資禮作為答謝，<br>
@@ -478,16 +496,35 @@
 
         <section id="gift" class="sections">
             <h1 class="fadeInTrigger">應援禮介紹</h1>
-            <p class="fadeInTrigger">敬請期待</p>
+            <p class="fadeInTrigger">敬請期待</p><br><br><br>
         </section>
-        <section id="contact" class="sections">
 
+        <div class="banner"></div>
+
+        <section id="cooper" class="sections">
+            <p>
+                什麼！？妳有為Gemini的生日製作應援物嗎？<br><br>
+                我們打算募集大家製作的應援物放在展場內<br>
+                讓粉絲們能一次收穫滿滿的應援物ᦂ<br>
+                有意製作應援物的各位歡迎私訊我們！<br>
+                誠摯邀請您的加入!<br><br>
+            </p>
+            <img src="./gemini_img/mono_picture.png" width="100%">
         </section>
         <section id="footer">
-            <img src="./gemini_img/GBME_white.svg">
-            <p>＃Gemini Birthday Mini Exhibition 生日特展</p>
-            <img src="./gemini_img/iPhone 13/ig_white.svg">
-            <img src="./gemini_img/bi_twitter.svg">
+            <img src="./gemini_img/twfclogo.png" width="48px">
+            <p>Support By Gemini 台灣粉絲站</p>
+            <div>
+                <a href="https://www.instagram.com/gemini_twfc/?next=https%3A%2F%2Fwww.instagram.com%2Fp%2F5kuFSjvpCk%2Fc%2F17852237263022004%2F%3F__coig_login%3D1"
+                    target="_blank">
+                    <img src="./gemini_img/iPhone 13/ig_white.svg" width="24px">
+                </a>
+                <p>|</p>
+                <a href="https://twitter.com/gemini_taiwanfc?s=21&t=GhsE4ReZ_Db9leVmbFCFLw" target="_blank">
+                    <img src="./gemini_img/bi_twitter.svg" width="24px">
+                </a>
+            </div>
+
         </section>
     </div>
     <script>
