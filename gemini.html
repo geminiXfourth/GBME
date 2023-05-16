@@ -56,7 +56,7 @@
         }
 
         a:hover {
-            color: #B1E1FF;
+            color: #8ED4FF;
         }
 
         /*アクティブになったエリア*/
@@ -73,7 +73,7 @@
             z-index: 3;
             width: 88px;
             height: 88px;
-            background: linear-gradient(180deg, #B1E1FF 0%, #F6B1FF 52.6%, #FFFEB1 100%);
+            background: linear-gradient(180deg, #8ED4FF 0%, #F293FF 51.56%, #FFFD7B 100%);
             box-shadow: inset -4px -4px 4px rgba(168, 167, 119, 0.3), inset 4px 4px 4px rgba(255, 255, 255, 0.6);
             top: -28px;
             left: 50%;
@@ -274,6 +274,7 @@
         .union3 {
             position: absolute;
             left: -60px;
+            top: 600px;
         }
 
         .starroad {
@@ -285,7 +286,7 @@
         .envecake {
             position: absolute;
             right: 0;
-            top: 200px;
+            top: 0;
         }
 
         #particles-js {
@@ -320,7 +321,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
 
-        .button p {
+        .button h2 {
             color: #FFF;
             font-size: 24px;
             margin: 0;
@@ -329,8 +330,7 @@
 
         .weight {
             font-weight: 600;
-            box-shadow: 0 1px;
-            padding-bottom: 2px;
+            text-decoration: solid underline #F293FF 4px;
         }
 
         #donate {
@@ -341,17 +341,19 @@
             font-size: 1.6vw;
         }
 
-        #donate>p {
+        #donate p {
             font-size: 4vw;
+            position: relative;
         }
 
         #footer {
             width: 100%;
-            background-color: #B1E1FF;
+            background-color: #8ED4FF;
             padding: 1.6rem 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 160px;
         }
 
         #footer>div {
@@ -369,10 +371,21 @@
             margin-top: 16px;
         }
 
-        #cooper>p {
-            font-size: 14px;
+        #cooper {
+            position: relative;
+        }
+        
+        #cooper p:nth-child(1){
             text-align: center;
             line-height: 36px;
+        }
+        #cooper p{
+            font-size: 14px;
+        }
+
+        .noticegem {
+            position: absolute;
+            bottom: -60px;
         }
 
         @media (min-width:576px) {
@@ -498,7 +511,7 @@
 
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnveZyvOVMecGulChgWg-Jrsx_0MscDzRCC18i71CeDlBNUQ/viewform"
                 target="_blank" class="button fadeInTrigger">
-                <p>預約表單連結</p><img src="./gemini_img/iPhone 13/material-symbols_arrow-forward-ios-rounded.svg">
+                <h2>填寫預約表單</h2><img src="./gemini_img/iPhone 13/material-symbols_arrow-forward-ios-rounded.svg">
             </a><br><br>
         </section>
 
@@ -507,30 +520,38 @@
 
         <section id="donate" class="sections">
             <img src="./gemini_img/Union_purple.svg" class="union3">
-            <h1 class="fadeInTrigger">應援計劃&nbsp;<span>＃Birthday Supporting Project</span></h1>
             <img src="./gemini_img/envelop_cake.svg" class="envecake">
-            <p class="fadeInTrigger">泰國應援部分 ，<br>
+            <h1 class="fadeInTrigger">應援計劃&nbsp;<span>＃Birthday Supporting Project</span></h1>
+            <p class="fadeInTrigger">
+                
+                <span class="weight">泰國應援部分 ，</span><br>
                 將於Gemimi生日時經由Gem泰站（IG&nbsp;@Geminintfamily）協助，<br>
                 致送零食蛋糕到Gemini生日慶生指定會場。<br>
                 <br>
                 也歡迎Khunnoo提供手寫卡片，<br>
-                台站將於6月底統一帶至泰國，<br>
-                交由Gem泰站轉交給Gemini。<br><br><br>
-                台灣集資部分，<br>
+                台站將於6月底統一帶至泰國，交由Gem泰站轉交給Gemini。
+            </p>
+            <img src="./gemini_img/gem_donate.png" width="100%"><hr>
+            <p><span class="weight">台灣集資部分，</span><br>
                 因此次有生日特展與泰國應援兩個活動，<br>
                 金額支出較高、希望Khunnoo能一起集資，<br>
                 展場將設置募款箱，<br>
                 並有小小的募資禮作為答謝，<br>
                 歡迎大家踴躍支持，讓應援能夠持續下去！<br>
-            </p>
-            <img src="./gemini_img/gem_donate.png" width="100%">
+            </p><br>
+            <p>一般禮</p>
         </section>
 
         <div class="banner"></div>
 
         <section id="gift" class="sections">
             <h1 class="fadeInTrigger">應援禮介紹</h1>
-            <p class="fadeInTrigger">敬請期待</p><br><br><br>
+            <img src="./gemini_img/iPhone 13/gift_back1.svg">
+            <img src="./gemini_img/iPhone 13/donate_giftpic1.png">
+            <img src="./gemini_img/iPhone 13/gift_back2.svg">
+            
+            <img src="./gemini_img/iPhone 13/gift_back3.svg">
+            <img src="./gemini_img/iPhone 13/donate_giftpic3.png">
         </section>
 
         <div class="banner"></div>
@@ -544,7 +565,26 @@
                 誠摯邀請您的加入!<br><br>
             </p>
             <img src="./gemini_img/mono_picture.png" width="100%">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFBUlRMxC_HihSMNtaim9_hHbNbOTmRPxZ72ZU6eOtELVWQ/viewform"
+                target="_blank" class="button fadeInTrigger">
+                <h2>填寫合作表單</h2><img src="./gemini_img/iPhone 13/material-symbols_arrow-forward-ios-rounded.svg">
+            </a><br><br><br><br>
+
+            <h1 class="fadeInTrigger">參展注意事項</h1>
+            <img src="./gemini_img/notice_gempic.png" width="100%" class="noticegem">
+            <p class="fadeInTrigger">
+                1. 請配合店家相關措施<br>
+                2. 展場應援物禁止販賣與轉售<br>
+                3. 展場物品請勿私自帶走<br>
+                4. 請多利用表單預約入場，以維持觀展最佳品質，<br>如遇排隊情況也請配合現場指示<br>
+                5. 金錢交易請當場點清，離場後恕不處理<br>
+                6. 後續如有更動請以台站最新公告為主<br><br>
+               
+               如有其他問題歡迎私訊我們～ᦂ
+            </p>
+
         </section>
+
         <section id="footer">
             <img src="./gemini_img/twfclogo.png" width="48px">
             <p>Support By Gemini 台灣粉絲站</p>
@@ -588,7 +628,7 @@
                     }
                 },
                 "color": {
-                    "value": ["#FFB1D2", "#B1E1FF", "#F6B1FF", "#CDFFB1", "#FFFEB1", "#FFB9B3", "#E85298"]//紙吹雪の色の数を増やすことが出来る
+                    "value": ["#FFB1D2", "#8ED4FF", "#F293FF", "#CDFFB1", "#FFFEB1", "#FFB9B3", "#E85298"]//紙吹雪の色の数を増やすことが出来る
                 },
                 "shape": {
                     "type": "polygon",//形状はpolygonを指定
