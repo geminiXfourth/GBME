@@ -374,18 +374,74 @@
         #cooper {
             position: relative;
         }
-        
-        #cooper p:nth-child(1){
+
+        #cooper p:nth-child(1) {
             text-align: center;
             line-height: 36px;
         }
-        #cooper p{
+
+        #cooper p {
             font-size: 14px;
         }
 
         .noticegem {
             position: absolute;
             bottom: -60px;
+        }
+
+        .cards {
+            width: 100%;
+            height: 450px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: 270px;
+            height: fit-content;
+            position: relative;
+            perspective: 150rem;
+            border: none;
+        }
+
+        .font,
+        .back {
+            position: absolute;
+            transition: all 0.5s;
+            backface-visibility: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            
+        }
+
+        .back {
+            transform: rotateY(-180deg);
+        }
+
+        .card:hover .font {
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: rotateY(0);
+        }
+
+        #gift {
+            position: relative;
+            width: 100%;
+        }
+
+        #gift img {
+            width: 100%;
+        }
+
+        .giftback {
+            margin-bottom: -56px;
+            margin-left: -45px;
+
         }
 
         @media (min-width:576px) {
@@ -405,6 +461,7 @@
             #donate>p {
                 font-size: 16px;
             }
+
             #acti>p {
                 font-size: 16px;
             }
@@ -523,7 +580,7 @@
             <img src="./gemini_img/envelop_cake.svg" class="envecake">
             <h1 class="fadeInTrigger">應援計劃&nbsp;<span>＃Birthday Supporting Project</span></h1>
             <p class="fadeInTrigger">
-                
+
                 <span class="weight">泰國應援部分 ，</span><br>
                 將於Gemimi生日時經由Gem泰站（IG&nbsp;@Geminintfamily）協助，<br>
                 致送零食蛋糕到Gemini生日慶生指定會場。<br>
@@ -531,7 +588,8 @@
                 也歡迎Khunnoo提供手寫卡片，<br>
                 台站將於6月底統一帶至泰國，交由Gem泰站轉交給Gemini。
             </p>
-            <img src="./gemini_img/gem_donate.png" width="100%"><hr>
+            <img src="./gemini_img/gem_donate.png" width="100%">
+            <hr>
             <p><span class="weight">台灣集資部分，</span><br>
                 因此次有生日特展與泰國應援兩個活動，<br>
                 金額支出較高、希望Khunnoo能一起集資，<br>
@@ -545,13 +603,24 @@
         <div class="banner"></div>
 
         <section id="gift" class="sections">
-            <h1 class="fadeInTrigger">應援禮介紹</h1>
-            <img src="./gemini_img/iPhone 13/gift_back1.svg">
-            <img src="./gemini_img/iPhone 13/donate_giftpic1.png">
-            <img src="./gemini_img/iPhone 13/gift_back2.svg">
-            
-            <img src="./gemini_img/iPhone 13/gift_back3.svg">
-            <img src="./gemini_img/iPhone 13/donate_giftpic3.png">
+            <h1 class="fadeInTrigger">參展應援禮介紹</h1>
+            <p>領取資格：<br>
+            <span class="weight">於6/10-6/11 各時間區段先入場之16名觀眾，即可獲得一般參展禮</span></p>
+            <img src="./gemini_img/iPhone 13/gift_back1.svg" class="giftback">
+            <img src="./gemini_img/iPhone 13/donate_giftpic1.png"class="fadeInTrigger">
+            <img src="./gemini_img/iPhone 13/gift_back3.svg" class="giftback">
+            <img src="./gemini_img/iPhone 13/donate_giftpic3.png"class="fadeInTrigger">
+            <img src="./gemini_img/iPhone 13/gift_back2.svg" class="giftback">
+            <div class="cards">
+                <div class='card fadeInTrigger'>
+                    <div class='font'><img src="./gemini_img/normalcard_back.jpg"></div>
+                    <div class='back'><img src="./gemini_img/normalcard1.jpg"></div>
+                </div>
+                <div class='card fadeInTrigger'>
+                    <div class='font'><img src="./gemini_img/normalcard_back.jpg"></div>
+                    <div class='back'><img src="./gemini_img/normalcard2.jpg"></div>
+                </div>
+            </div>
         </section>
 
         <div class="banner"></div>
@@ -579,8 +648,8 @@
                 4. 請多利用表單預約入場，以維持觀展最佳品質，<br>如遇排隊情況也請配合現場指示<br>
                 5. 金錢交易請當場點清，離場後恕不處理<br>
                 6. 後續如有更動請以台站最新公告為主<br><br>
-               
-               如有其他問題歡迎私訊我們～ᦂ
+
+                如有其他問題歡迎私訊我們～ᦂ
             </p>
 
         </section>
