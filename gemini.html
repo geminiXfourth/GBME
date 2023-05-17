@@ -16,7 +16,7 @@
 
 
     <title>Gemini生日特展</title>
-    <link href="gemini_img/gemtwfclogo.ico" rel="shortcut icon" />
+    <link href="gemini_img/birthday_logo.ico" rel="shortcut icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
@@ -49,13 +49,14 @@
             overflow: hidden;
         }
 
-        a {
+        .locate {
             text-decoration: none;
-            color: #FFB9B3;
+            color: #333;
+            text-decoration: underline;
             font-weight: 600;
         }
 
-        a:hover {
+        .locate:hover {
             color: #8ED4FF;
         }
 
@@ -78,9 +79,7 @@
             top: -28px;
             left: 50%;
             transform: translateX(-50%);
-            /*50%から円の半径を引いた値*/
             transition: all .6s;
-            /*0.6秒かけてアニメーション*/
         }
 
         .circle-bg.circleactive {
@@ -90,8 +89,6 @@
         /*ナビゲーション*/
         #g-nav ul {
             display: none;
-            /*はじめは透過0*/
-            /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
             padding: 0;
             position: absolute;
             z-index: 999;
@@ -110,7 +107,6 @@
             padding-top: 88px;
         }
 
-        /* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
         #g-nav.panelactive ul li {
             animation-name: gnaviAnime;
             animation-duration: 1s;
@@ -245,7 +241,13 @@
         }
 
         h1 {
-            margin-bottom: 36px;
+            margin-bottom: 48px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 48px;
             font-weight: 600;
         }
 
@@ -319,6 +321,7 @@
             border-radius: 12px;
             padding: 16px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            text-decoration: none;
         }
 
         .button h2 {
@@ -330,7 +333,7 @@
 
         .weight {
             font-weight: 600;
-            text-decoration: solid underline #F293FF 4px;
+            color: #F293FF;
         }
 
         #donate {
@@ -414,7 +417,7 @@
 
         .card img {
             width: 100%;
-            
+
         }
 
         .back {
@@ -432,6 +435,7 @@
         #gift {
             position: relative;
             width: 100%;
+            text-align: center;
         }
 
         #gift img {
@@ -546,7 +550,8 @@
 
                 <span class="icon"><img src="./gemini_img/icon_loca.svg"> 展覽地點：星星路99號<br>
                     地址：<br>
-                    <a href="https://goo.gl/maps/uff6P1iLPFQfFwhv6" target="_blank">台北市大安區忠孝東路四段97號3樓28室</a><br>
+                    <a href="https://goo.gl/maps/uff6P1iLPFQfFwhv6" target="_blank"
+                        class="locate">台北市大安區忠孝東路四段97號3樓28室</a><br>
                     前往方式：<br>
                     捷運忠孝復興/忠孝敦化站 步行約6分鐘<br><br>
 
@@ -588,7 +593,7 @@
                 也歡迎Khunnoo提供手寫卡片，<br>
                 台站將於6月底統一帶至泰國，交由Gem泰站轉交給Gemini。
             </p>
-            <img src="./gemini_img/gem_donate.png" width="100%">
+            <img src="./gemini_img/gem_donate.png" width="100%" class="fadeInTrigger">
             <hr>
             <p><span class="weight">台灣集資部分，</span><br>
                 因此次有生日特展與泰國應援兩個活動，<br>
@@ -597,20 +602,23 @@
                 並有小小的募資禮作為答謝，<br>
                 歡迎大家踴躍支持，讓應援能夠持續下去！<br>
             </p><br>
-            <p>一般禮</p>
-        </section>
+            <img src="./gemini_img/donate_gift1.png" width="100%">
 
+        </section>
+        <img src="./gemini_img/donate_gift2.png" width="100%">
         <div class="banner"></div>
 
         <section id="gift" class="sections">
-            <h1 class="fadeInTrigger">參展應援禮介紹</h1>
-            <p>領取資格：<br>
-            <span class="weight">於6/10-6/11 各時間區段先入場之16名觀眾，即可獲得一般參展禮</span></p>
+            <h1 class="fadeInTrigger">應援禮介紹</h1>
+            <p class="fadeInTrigger">領取資格：<br>
+                <span class="weight fadeInTrigger">於6/10-6/11 各時間區段先入場之16名觀眾，即可獲得一般參展禮</span>
+            </p>
             <img src="./gemini_img/iPhone 13/gift_back1.svg" class="giftback">
-            <img src="./gemini_img/iPhone 13/donate_giftpic1.png"class="fadeInTrigger">
+            <img src="./gemini_img/gift_1.png" class="fadeInTrigger">
             <img src="./gemini_img/iPhone 13/gift_back3.svg" class="giftback">
-            <img src="./gemini_img/iPhone 13/donate_giftpic3.png"class="fadeInTrigger">
+            <img src="./gemini_img/gift_2.png" class="fadeInTrigger">
             <img src="./gemini_img/iPhone 13/gift_back2.svg" class="giftback">
+            <p>（ 點擊翻轉小卡 ）</p>
             <div class="cards">
                 <div class='card fadeInTrigger'>
                     <div class='font'><img src="./gemini_img/normalcard_back.jpg"></div>
@@ -626,20 +634,20 @@
         <div class="banner"></div>
 
         <section id="cooper" class="sections">
-            <p>
+            <p class="fadeInTrigger">
                 什麼！？妳有為Gemini的生日製作應援物嗎？<br><br>
                 我們打算募集大家製作的應援物放在展場內<br>
                 讓粉絲們能一次收穫滿滿的應援物ᦂ<br>
                 有意製作應援物的各位歡迎私訊我們！<br>
                 誠摯邀請您的加入!<br><br>
             </p>
-            <img src="./gemini_img/mono_picture.png" width="100%">
+            <img src="./gemini_img/mono_picture.png" width="100%" class="fadeInTrigger">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmFBUlRMxC_HihSMNtaim9_hHbNbOTmRPxZ72ZU6eOtELVWQ/viewform"
                 target="_blank" class="button fadeInTrigger">
                 <h2>填寫合作表單</h2><img src="./gemini_img/iPhone 13/material-symbols_arrow-forward-ios-rounded.svg">
-            </a><br><br><br><br>
-
-            <h1 class="fadeInTrigger">參展注意事項</h1>
+            </a><br><br><br>
+            <hr>
+            <h2 class="fadeInTrigger">參展注意事項</h2>
             <img src="./gemini_img/notice_gempic.png" width="100%" class="noticegem">
             <p class="fadeInTrigger">
                 1. 請配合店家相關措施<br>
@@ -762,30 +770,27 @@
         });
 
         //fade動畫
-        // 1. 動くきっかけを独自の名前（関数：fadeAnime）で定義
+
         function fadeAnime() {
-            //動きの指定
-            $('.fadeInTrigger').each(function () { //fadeInTriggerというクラス名が
-                var elemPos = $(this).offset().top + 50;//要素より、50px上の
+            $('.fadeInTrigger').each(function () {
+                var elemPos = $(this).offset().top + 50;
                 var scroll = $(window).scrollTop();
                 var windowHeight = $(window).height();
                 if (scroll >= elemPos - windowHeight) {
-                    $(this).addClass('fadeIn');// 画面内に入ったらfadeInというクラス名を追記
+                    $(this).addClass('fadeIn');
                 } else {
-                    $(this).removeClass('fadeIn');// 画面外に出たらfadeInというクラス名を外す
+                    $(this).removeClass('fadeIn');
                 }
             });
         }
-        // 2. 定義した名前をページが読み込まれた後・スクロールした後それぞれのきっかけに指定
-        // 画面をスクロールをしたら動く場合の記述
-        $(window).scroll(function () {
-            fadeAnime();/* アニメーション用の関数を呼ぶ*/
-        });// ここまで画面をスクロールをしたら動く場合の記述
 
-        // 画面が読み込まれたらすぐに動く場合の記述
+        $(window).scroll(function () {
+            fadeAnime();
+        });
+
         $(window).on('load', function () {
-            fadeAnime();/* アニメーション用の関数を呼ぶ*/
-        });// ここまで画面が読み込まれたらすぐに動く場合の記述
+            fadeAnime();
+        });
 
     </script>
 
